@@ -1,0 +1,13 @@
+north = c(16.3,16.1,16.4,16.5)
+south = c(16.9,16.5,16.4,16.6)
+west = c(16.4,16.4,16.6,16.1)
+east = c(17.1,17.2,16.6,16.8)
+central = c(16.2,16.6,16.5,16.4)
+
+df = data.frame(north,south,west,east,central)
+df_stack = stack(df)
+# print(df_stack)
+res = aov(values~ind,data=df_stack)
+print(res)
+cat('\n')
+print(summary(res))
